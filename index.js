@@ -1,20 +1,23 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require("morgan");
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 const options = {
-    target: 'http://newDomain.com',
-    ws: true,
-    pathRewrite: {
-        '^/old-path': '/new-path',
-        '^/remove/path': '/path',
-      } 
-}
+  target: process.env.TARGET,
+  changeOrigin: true,
+  pathRewrite: {
+    '^/api': '',
+  },
+ }
 
-const exampleProxy = createProxyMiddleware(options);
+const proxy = createProxyMiddleware(options);
 
 const app = express();
 
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
+
 app.use(morgan('dev'));
-app.use('/', exampleProxy);
-app.listen(3000);
+app.use('/api', proxy);
+app.listen(PORT, HOST);
