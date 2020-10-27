@@ -1,4 +1,4 @@
-# loyality-proxy
+# proxy
 
 Готовый прокси сервер.
 
