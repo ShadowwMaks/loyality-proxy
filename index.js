@@ -11,7 +11,7 @@ function checkEnv(key) {
 
 const PORT = checkEnv('PORT');
 const HOST = checkEnv('HOST');
-const TARGET = checkEnv('HOST');
+const TARGET = checkEnv('TARGET');
 
 const options = {
   target: TARGET,
