@@ -10,7 +10,7 @@ function checkEnv(key) {
 }
 
 const PORT = checkEnv('PORT');
-const HOST = checkEnv('HOST');
+const HOST = process.env.HOST || "localhost"
 const TARGET = checkEnv('TARGET');
 
 const options = {
@@ -23,5 +23,5 @@ const proxy = createProxyMiddleware(options);
 const app = express();
 
 app.use(morgan('dev'));
-app.use('/api', proxy);
+app.use('/', proxy);
 app.listen(PORT, HOST);
