@@ -1,8 +1,8 @@
 {
-  "name": "loyality-proxy",
+  "name": "proxy",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/ShadowwMaks/loyality-proxy.git",
+  "repository": "https://github.com/ShadowwMaks/proxy.git",
   "author": "ShadowwMaks <maksimix.steam@mail.ru>",
   "license": "MIT",
   "dependencies": {

@@ -9,9 +9,9 @@ function checkEnv(key) {
   process.exit(1);
 }
 
-const PORT = checkEnv(PORT);
-const HOST = checkEnv(HOST);
-const TARGET = checkEnv(HOST);
+const PORT = checkEnv('PORT');
+const HOST = checkEnv('HOST');
+const TARGET = checkEnv('HOST');
 
 const options = {
   target: TARGET,
